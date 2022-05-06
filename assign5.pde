@@ -558,9 +558,6 @@ String convertFramesToTimeString(int frames) {	// Requirement #4
   sec = sec - min*60;
   mm = nf(min, 2);
   ss = nf(sec, 2);
-  if(ss == "60"){
-    noLoop();
-  }
   return mm + ":" + ss;
 }
 
