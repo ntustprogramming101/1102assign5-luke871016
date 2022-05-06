@@ -553,11 +553,14 @@ boolean isHit(float ax, float ay, float aw, float ah, float bx, float by, float 
 String convertFramesToTimeString(int frames) {	// Requirement #4
   String mm, ss;
   int min, sec;
-  sec = frames/60;
+  sec = floor(frames/60);
   min = floor(sec / 60);
   sec = sec - min*60;
   mm = nf(min, 2);
   ss = nf(sec, 2);
+  if(ss == "60"){
+    noLoop();
+  }
   return mm + ":" + ss;
 }
 
